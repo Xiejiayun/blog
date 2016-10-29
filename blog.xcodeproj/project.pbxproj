@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C16C5C1EA927CAB34ED202D /* libPods-blog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A6FC4D681AE6C38AF74D69 /* libPods-blog.a */; };
 		DED131C01DC456F900D02D74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131BF1DC456F900D02D74 /* main.m */; };
 		DED131C31DC456F900D02D74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131C21DC456F900D02D74 /* AppDelegate.m */; };
 		DED131C61DC456F900D02D74 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131C51DC456F900D02D74 /* ViewController.m */; };
 		DED131C91DC456F900D02D74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED131C71DC456F900D02D74 /* Main.storyboard */; };
 		DED131CB1DC456F900D02D74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED131CA1DC456F900D02D74 /* Assets.xcassets */; };
 		DED131CE1DC456F900D02D74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED131CC1DC456F900D02D74 /* LaunchScreen.storyboard */; };
+		DED131D71DC45DAC00D02D74 /* HomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131D61DC45DAC00D02D74 /* HomeTabBarController.m */; };
+		DED131DA1DC4652600D02D74 /* FreshBlogView.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131D91DC4652600D02D74 /* FreshBlogView.m */; };
+		DED131E01DC46B2500D02D74 /* BlogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131DF1DC46B2500D02D74 /* BlogCell.m */; };
+		DED131E31DC46C8D00D02D74 /* FreshBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131E21DC46C8D00D02D74 /* FreshBlogViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17140CE8E974F848BD69A2DF /* Pods-blog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blog/Pods-blog.debug.xcconfig"; sourceTree = "<group>"; };
+		67956DD40CF299031E7C03DF /* Pods-blog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blog.release.xcconfig"; path = "Pods/Target Support Files/Pods-blog/Pods-blog.release.xcconfig"; sourceTree = "<group>"; };
 		DED131BB1DC456F900D02D74 /* blog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED131BF1DC456F900D02D74 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DED131C11DC456F900D02D74 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +33,15 @@
 		DED131CA1DC456F900D02D74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DED131CD1DC456F900D02D74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DED131CF1DC456F900D02D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DED131D51DC45DAC00D02D74 /* HomeTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTabBarController.h; sourceTree = "<group>"; };
+		DED131D61DC45DAC00D02D74 /* HomeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTabBarController.m; sourceTree = "<group>"; };
+		DED131D81DC4652600D02D74 /* FreshBlogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshBlogView.h; sourceTree = "<group>"; };
+		DED131D91DC4652600D02D74 /* FreshBlogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshBlogView.m; sourceTree = "<group>"; };
+		DED131DE1DC46B2500D02D74 /* BlogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogCell.h; sourceTree = "<group>"; };
+		DED131DF1DC46B2500D02D74 /* BlogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogCell.m; sourceTree = "<group>"; };
+		DED131E11DC46C8D00D02D74 /* FreshBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshBlogViewController.h; sourceTree = "<group>"; };
+		DED131E21DC46C8D00D02D74 /* FreshBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshBlogViewController.m; sourceTree = "<group>"; };
+		F0A6FC4D681AE6C38AF74D69 /* libPods-blog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-blog.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +49,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C16C5C1EA927CAB34ED202D /* libPods-blog.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B4B62F3945C6DAE15A70AF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0A6FC4D681AE6C38AF74D69 /* libPods-blog.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DED131B21DC456F900D02D74 = {
 			isa = PBXGroup;
 			children = (
 				DED131BD1DC456F900D02D74 /* blog */,
 				DED131BC1DC456F900D02D74 /* Products */,
+				F19383583C1549045C645948 /* Pods */,
+				1B4B62F3945C6DAE15A70AF3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +94,14 @@
 				DED131CC1DC456F900D02D74 /* LaunchScreen.storyboard */,
 				DED131CF1DC456F900D02D74 /* Info.plist */,
 				DED131BE1DC456F900D02D74 /* Supporting Files */,
+				DED131D51DC45DAC00D02D74 /* HomeTabBarController.h */,
+				DED131D61DC45DAC00D02D74 /* HomeTabBarController.m */,
+				DED131D81DC4652600D02D74 /* FreshBlogView.h */,
+				DED131D91DC4652600D02D74 /* FreshBlogView.m */,
+				DED131E11DC46C8D00D02D74 /* FreshBlogViewController.h */,
+				DED131E21DC46C8D00D02D74 /* FreshBlogViewController.m */,
+				DED131DE1DC46B2500D02D74 /* BlogCell.h */,
+				DED131DF1DC46B2500D02D74 /* BlogCell.m */,
 			);
 			path = blog;
 			sourceTree = "<group>";
@@ -79,6 +114,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F19383583C1549045C645948 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17140CE8E974F848BD69A2DF /* Pods-blog.debug.xcconfig */,
+				67956DD40CF299031E7C03DF /* Pods-blog.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +130,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DED131D21DC456F900D02D74 /* Build configuration list for PBXNativeTarget "blog" */;
 			buildPhases = (
+				F3647F6042A06314CD9B1705 /* [CP] Check Pods Manifest.lock */,
 				DED131B71DC456F900D02D74 /* Sources */,
 				DED131B81DC456F900D02D74 /* Frameworks */,
 				DED131B91DC456F900D02D74 /* Resources */,
+				C4117F3AC286C2093FACF8A9 /* [CP] Embed Pods Frameworks */,
+				414FB62D39A87DE394CBE9D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -145,13 +192,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		414FB62D39A87DE394CBE9D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-blog/Pods-blog-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4117F3AC286C2093FACF8A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-blog/Pods-blog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3647F6042A06314CD9B1705 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DED131B71DC456F900D02D74 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED131E01DC46B2500D02D74 /* BlogCell.m in Sources */,
+				DED131DA1DC4652600D02D74 /* FreshBlogView.m in Sources */,
+				DED131E31DC46C8D00D02D74 /* FreshBlogViewController.m in Sources */,
 				DED131C61DC456F900D02D74 /* ViewController.m in Sources */,
 				DED131C31DC456F900D02D74 /* AppDelegate.m in Sources */,
+				DED131D71DC45DAC00D02D74 /* HomeTabBarController.m in Sources */,
 				DED131C01DC456F900D02D74 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,6 +295,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -243,6 +343,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -268,6 +369,7 @@
 		};
 		DED131D31DC456F900D02D74 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17140CE8E974F848BD69A2DF /* Pods-blog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = blog/Info.plist;
@@ -279,6 +381,7 @@
 		};
 		DED131D41DC456F900D02D74 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67956DD40CF299031E7C03DF /* Pods-blog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = blog/Info.plist;
@@ -307,6 +410,7 @@
 				DED131D41DC456F900D02D74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
