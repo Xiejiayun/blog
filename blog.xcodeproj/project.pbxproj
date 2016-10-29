@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C16C5C1EA927CAB34ED202D /* libPods-blog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A6FC4D681AE6C38AF74D69 /* libPods-blog.a */; };
+		DE36ABB51DC497D4004C93D7 /* FollowBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36ABB41DC497D4004C93D7 /* FollowBlogViewController.m */; };
 		DED131C01DC456F900D02D74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131BF1DC456F900D02D74 /* main.m */; };
 		DED131C31DC456F900D02D74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131C21DC456F900D02D74 /* AppDelegate.m */; };
 		DED131C61DC456F900D02D74 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131C51DC456F900D02D74 /* ViewController.m */; };
@@ -23,6 +24,8 @@
 /* Begin PBXFileReference section */
 		17140CE8E974F848BD69A2DF /* Pods-blog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blog/Pods-blog.debug.xcconfig"; sourceTree = "<group>"; };
 		67956DD40CF299031E7C03DF /* Pods-blog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blog.release.xcconfig"; path = "Pods/Target Support Files/Pods-blog/Pods-blog.release.xcconfig"; sourceTree = "<group>"; };
+		DE36ABB31DC497D4004C93D7 /* FollowBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowBlogViewController.h; sourceTree = "<group>"; };
+		DE36ABB41DC497D4004C93D7 /* FollowBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowBlogViewController.m; sourceTree = "<group>"; };
 		DED131BB1DC456F900D02D74 /* blog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED131BF1DC456F900D02D74 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DED131C11DC456F900D02D74 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 				DED131D81DC4652600D02D74 /* FreshBlogView.h */,
 				DED131D91DC4652600D02D74 /* FreshBlogView.m */,
 				DED131E11DC46C8D00D02D74 /* FreshBlogViewController.h */,
+				DE36ABB31DC497D4004C93D7 /* FollowBlogViewController.h */,
+				DE36ABB41DC497D4004C93D7 /* FollowBlogViewController.m */,
 				DED131E21DC46C8D00D02D74 /* FreshBlogViewController.m */,
 				DED131DE1DC46B2500D02D74 /* BlogCell.h */,
 				DED131DF1DC46B2500D02D74 /* BlogCell.m */,
@@ -248,6 +253,7 @@
 				DED131E01DC46B2500D02D74 /* BlogCell.m in Sources */,
 				DED131DA1DC4652600D02D74 /* FreshBlogView.m in Sources */,
 				DED131E31DC46C8D00D02D74 /* FreshBlogViewController.m in Sources */,
+				DE36ABB51DC497D4004C93D7 /* FollowBlogViewController.m in Sources */,
 				DED131C61DC456F900D02D74 /* ViewController.m in Sources */,
 				DED131C31DC456F900D02D74 /* AppDelegate.m in Sources */,
 				DED131D71DC45DAC00D02D74 /* HomeTabBarController.m in Sources */,

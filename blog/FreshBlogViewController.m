@@ -14,16 +14,11 @@
 @end
 
 @implementation FreshBlogViewController
-NSArray * freshNames;
-NSArray * freshDates;
-NSArray * freshAvatars;
-NSArray * freshContents;
+NSMutableArray * blogs;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    freshNames = [NSArray arrayWithObjects:@"one",@"two",nil];
-    freshDates = [NSArray arrayWithObjects:@"2016-10-30", @"2016-10-31",nil];
-    freshContents = [NSArray arrayWithObjects:@"第一篇文章内容", @"第二篇文章内容",nil];
     NSString *url = @"https://open.timepill.net/api/diaries/today";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
@@ -32,13 +27,19 @@ NSArray * freshContents;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"page"] = @1;
     params[@"page_size"] = @10;
-    
     [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:username password:password];
     [manager GET:url parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-        NSLog(@"Response: %@", responseObject);  } failure:^(NSURLSessionTask *operation, NSError *error) {
+        if ([responseObject isKindOfClass: [NSDictionary class]]) {
+            NSDictionary *jsonDict = (NSDictionary *) responseObject;
+            blogs = [jsonDict objectForKey:@"diaries"];
+            NSLog(@"blogs: %@", blogs);
+        }
+        NSLog(@"responseObject: %@", responseObject);
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
 
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,17 +49,20 @@ NSArray * freshContents;
 
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [freshNames count];
+    return [blogs count];
 }
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *simpleTableIndentifier = @"BlogCell";
-    BlogCell *cell = (BlogCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIndentifier];
+    static NSString *cellIndentifier = @"BlogCell";
+    BlogCell *cell = (BlogCell*)[tableView dequeueReusableCellWithIdentifier:cellIndentifier];
     if (cell == nil) {
-        cell = (BlogCell*)[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIndentifier];
+        cell = (BlogCell*)[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
     }
-    cell.author.text = [freshNames objectAtIndex:indexPath.row];
-    cell.createtime.text = [freshDates objectAtIndex:indexPath.row];
+    NSDictionary *blog = [blogs objectAtIndex:indexPath.row];
+    NSLog(@"blog: %@", blog);
+    cell.author.text = [[blog objectForKey:@"user"]objectForKey:@"name"];
+    cell.createtime.text = [blog objectForKey:@"created"];
+    cell.brief.text = [blog objectForKey:@"content"];
     return cell;
 }
 
