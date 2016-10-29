@@ -27,14 +27,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)login:(id)sender {
-    [self performSegueWithIdentifier:@"login" sender:self];        
+- (IBAction)login:(id)sender {     
     NSString *username = _uname.text;
     NSString *password = _upwd.text;
     NSString *url = @"https://open.timepill.net/api/users/my";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:username password:password];
+    [manager.requestSerializer setHTTPShouldHandleCookies:TRUE];
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"Response: %@", responseObject);
         [self performSegueWithIdentifier:@"login" sender:self];                     

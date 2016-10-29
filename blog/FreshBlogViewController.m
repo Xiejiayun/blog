@@ -29,6 +29,7 @@ NSMutableArray * blogs;
     params[@"page"] = @1;
     params[@"page_size"] = @10;
     [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:username password:password];
+    [manager.requestSerializer setHTTPShouldHandleCookies:TRUE];
     [manager GET:url parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         if ([responseObject isKindOfClass: [NSDictionary class]]) {
             NSDictionary *jsonDict = (NSDictionary *) responseObject;
@@ -68,7 +69,13 @@ NSMutableArray * blogs;
     cell.createtime.text = [blog objectForKey:@"created"];
     cell.brief.text = [blog objectForKey:@"content"];
     NSString *url = [[blog objectForKey:@"user"]objectForKey:@"iconUrl"];
+    NSLog(@"the icon url is %@", url);
     [cell.avatar sd_setImageWithURL:[NSURL URLWithString:url]];
+    [cell.avatar sd_setImageWithURL:[NSURL URLWithString:url]
+                      placeholderImage:[UIImage imageNamed:@"placeholder.png"]
+                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                 NSLog(@"Loaded: %@", image);
+                             }];
     cell.preservesSuperviewLayoutMargins = false;
     cell.separatorInset = UIEdgeInsetsZero;
     cell.layoutMargins = UIEdgeInsetsZero;
