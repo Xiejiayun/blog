@@ -16,7 +16,6 @@
 		DED131CB1DC456F900D02D74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED131CA1DC456F900D02D74 /* Assets.xcassets */; };
 		DED131CE1DC456F900D02D74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED131CC1DC456F900D02D74 /* LaunchScreen.storyboard */; };
 		DED131D71DC45DAC00D02D74 /* HomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131D61DC45DAC00D02D74 /* HomeTabBarController.m */; };
-		DED131DA1DC4652600D02D74 /* FreshBlogView.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131D91DC4652600D02D74 /* FreshBlogView.m */; };
 		DED131E01DC46B2500D02D74 /* BlogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131DF1DC46B2500D02D74 /* BlogCell.m */; };
 		DED131E31DC46C8D00D02D74 /* FreshBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131E21DC46C8D00D02D74 /* FreshBlogViewController.m */; };
 /* End PBXBuildFile section */
@@ -38,8 +37,6 @@
 		DED131CF1DC456F900D02D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DED131D51DC45DAC00D02D74 /* HomeTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTabBarController.h; sourceTree = "<group>"; };
 		DED131D61DC45DAC00D02D74 /* HomeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTabBarController.m; sourceTree = "<group>"; };
-		DED131D81DC4652600D02D74 /* FreshBlogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshBlogView.h; sourceTree = "<group>"; };
-		DED131D91DC4652600D02D74 /* FreshBlogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshBlogView.m; sourceTree = "<group>"; };
 		DED131DE1DC46B2500D02D74 /* BlogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogCell.h; sourceTree = "<group>"; };
 		DED131DF1DC46B2500D02D74 /* BlogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogCell.m; sourceTree = "<group>"; };
 		DED131E11DC46C8D00D02D74 /* FreshBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshBlogViewController.h; sourceTree = "<group>"; };
@@ -99,12 +96,10 @@
 				DED131BE1DC456F900D02D74 /* Supporting Files */,
 				DED131D51DC45DAC00D02D74 /* HomeTabBarController.h */,
 				DED131D61DC45DAC00D02D74 /* HomeTabBarController.m */,
-				DED131D81DC4652600D02D74 /* FreshBlogView.h */,
-				DED131D91DC4652600D02D74 /* FreshBlogView.m */,
 				DED131E11DC46C8D00D02D74 /* FreshBlogViewController.h */,
+				DED131E21DC46C8D00D02D74 /* FreshBlogViewController.m */,
 				DE36ABB31DC497D4004C93D7 /* FollowBlogViewController.h */,
 				DE36ABB41DC497D4004C93D7 /* FollowBlogViewController.m */,
-				DED131E21DC46C8D00D02D74 /* FreshBlogViewController.m */,
 				DED131DE1DC46B2500D02D74 /* BlogCell.h */,
 				DED131DF1DC46B2500D02D74 /* BlogCell.m */,
 			);
@@ -251,7 +246,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DED131E01DC46B2500D02D74 /* BlogCell.m in Sources */,
-				DED131DA1DC4652600D02D74 /* FreshBlogView.m in Sources */,
 				DED131E31DC46C8D00D02D74 /* FreshBlogViewController.m in Sources */,
 				DE36ABB51DC497D4004C93D7 /* FollowBlogViewController.m in Sources */,
 				DED131C61DC456F900D02D74 /* ViewController.m in Sources */,

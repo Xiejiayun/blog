@@ -9,6 +9,7 @@
 #import "FreshBlogViewController.h"
 #import "BlogCell.h"
 #import <AFNetworking/AFNetworking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface FreshBlogViewController ()
 
 @end
@@ -32,12 +33,14 @@ NSMutableArray * blogs;
         if ([responseObject isKindOfClass: [NSDictionary class]]) {
             NSDictionary *jsonDict = (NSDictionary *) responseObject;
             blogs = [jsonDict objectForKey:@"diaries"];
+            [self.tableView reloadData];
             NSLog(@"blogs: %@", blogs);
         }
         NSLog(@"responseObject: %@", responseObject);
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+    
 
     
 }
@@ -49,6 +52,7 @@ NSMutableArray * blogs;
 
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return [blogs count];
 }
 
@@ -59,10 +63,15 @@ NSMutableArray * blogs;
         cell = (BlogCell*)[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
     }
     NSDictionary *blog = [blogs objectAtIndex:indexPath.row];
-    NSLog(@"blog: %@", blog);
+    
     cell.author.text = [[blog objectForKey:@"user"]objectForKey:@"name"];
     cell.createtime.text = [blog objectForKey:@"created"];
     cell.brief.text = [blog objectForKey:@"content"];
+    NSString *url = [[blog objectForKey:@"user"]objectForKey:@"iconUrl"];
+    [cell.avatar sd_setImageWithURL:[NSURL URLWithString:url]];
+    cell.preservesSuperviewLayoutMargins = false;
+    cell.separatorInset = UIEdgeInsetsZero;
+    cell.layoutMargins = UIEdgeInsetsZero;
     return cell;
 }
 

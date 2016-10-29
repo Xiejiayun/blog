@@ -180,6 +180,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="最新日记" id="q7a-6N-w5Q"/>
+                    <connections>
+                        <outlet property="tableView" destination="JUD-Rf-SWg" id="982-ZR-U4J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGi-KF-yaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
