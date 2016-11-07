@@ -1,24 +1,22 @@
 //
-//  CommentViewController.m
+//  ArticlesViewController.m
 //  blog
 //
-//  Created by Jiayun Xie on 16/11/1.
+//  Created by Jiayun Xie on 16/11/7.
 //  Copyright © 2016年 Jiayun Xie. All rights reserved.
 //
 
-#import "CommentViewController.h"
+#import "ArticlesViewController.h"
 
-@interface CommentViewController ()
+@interface ArticlesViewController ()
 
 @end
 
-@implementation CommentViewController
+@implementation ArticlesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _notebook.text = [_blog objectForKey:@"notebook_subject"];
-    _content.text = [_blog objectForKey:@"content"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,9 +33,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-//添加评论
-- (IBAction)comment:(id)sender {
-}
 
 @end

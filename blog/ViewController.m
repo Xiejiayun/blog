@@ -27,7 +27,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)login:(id)sender {     
+- (IBAction)login:(id)sender {
+    [self performSegueWithIdentifier:@"login" sender:self];
     NSString *username = _uname.text;
     NSString *password = _upwd.text;
     NSString *url = @"https://open.timepill.net/api/users/my";

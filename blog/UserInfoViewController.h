@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface UserInfoViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *avatar;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *desc;
+@property (weak, nonatomic) IBOutlet UITableView *blogSet;
+@property (strong, nonatomic) NSDictionary * blog;
 
 @end

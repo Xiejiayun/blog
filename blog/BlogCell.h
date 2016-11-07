@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *author;
 @property (weak, nonatomic) IBOutlet UILabel *createtime;
 @property (weak, nonatomic) IBOutlet UITextView *brief;
+@property (weak, nonatomic) IBOutlet UILabel *book;
+@property (weak, nonatomic) IBOutlet UIButton *reply;
 
 @end

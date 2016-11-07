@@ -1,14 +1,14 @@
 //
-//  BlogCell.m
+//  ArticleCell.m
 //  blog
 //
-//  Created by Jiayun Xie on 16/10/29.
+//  Created by Jiayun Xie on 16/11/7.
 //  Copyright © 2016年 Jiayun Xie. All rights reserved.
 //
 
-#import "BlogCell.h"
+#import "ArticleCell.h"
 
-@implementation BlogCell
+@implementation ArticleCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -20,7 +20,5 @@
 
     // Configure the view for the selected state
 }
-
-
 
 @end

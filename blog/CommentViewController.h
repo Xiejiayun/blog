@@ -10,4 +10,13 @@
 
 @interface CommentViewController : UIViewController
 
+@property (strong, nonatomic) NSDictionary * blog;
+@property (weak, nonatomic) IBOutlet UILabel *notebook;
+@property (weak, nonatomic) IBOutlet UILabel *diary;
+
+@property (weak, nonatomic) IBOutlet UITextView *content;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) IBOutlet UITextField *commentContent;
+
 @end
