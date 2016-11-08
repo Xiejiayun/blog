@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BlogSetViewController : UIViewController
+@interface BlogSetViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end

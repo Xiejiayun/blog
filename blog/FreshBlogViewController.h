@@ -12,4 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property NSInteger *uid;
+
 @end

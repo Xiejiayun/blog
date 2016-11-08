@@ -18,7 +18,7 @@
 
 @implementation FreshBlogViewController
 
-@synthesize tableView;
+int page = 1;
 
 NSMutableArray * blogs;
 
@@ -46,12 +46,41 @@ NSMutableArray * blogs;
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)refresh:(UIRefreshControl *)refreshControl {
+    page++;
+    NSString *url = @"https://open.timepill.net/api/diaries/today";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    NSString *username = @"furnace09@163.com";
+    NSString *password = @"xiexie123";
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"page"] = @1;
+    params[@"page_size"] = @10;
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:username password:password];
+    [manager.requestSerializer setHTTPShouldHandleCookies:TRUE];
+    [manager GET:url parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        if ([responseObject isKindOfClass: [NSDictionary class]]) {
+            NSDictionary *jsonDict = (NSDictionary *) responseObject;
+            blogs = [jsonDict objectForKey:@"diaries"];
+            [self.tableView reloadData];
+            NSLog(@"blogs: %@", blogs);
+        }
+        NSLog(@"responseObject: %@", responseObject);
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
+    [refreshControl endRefreshing];
 }
 
 
@@ -72,15 +101,15 @@ NSMutableArray * blogs;
     cell.brief.text = [blog objectForKey:@"content"];
     cell.book.text =[blog objectForKey:@"notebook_subject"];
     NSString *commentCount = [blog objectForKey:@"comment_count"];
-
+    
     NSString * comment = [NSString stringWithFormat:@"%@,%@", @"回复", commentCount];
     [cell.reply setTitle:comment forState:UIControlStateNormal];
     NSString *url = [[blog objectForKey:@"user"]objectForKey:@"iconUrl"];
     NSLog(@"the icon url is %@", url);
     [cell.avatar sd_setImageWithURL:[NSURL URLWithString:url]
-                      placeholderImage:[UIImage imageNamed:@"placeholder.png"]
+                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]
                           completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                             }];
+                          }];
     cell.preservesSuperviewLayoutMargins = false;
     cell.separatorInset = UIEdgeInsetsZero;
     cell.layoutMargins = UIEdgeInsetsZero;
@@ -103,18 +132,17 @@ NSMutableArray * blogs;
     NSLog(@"点击了头像");
 }
 - (IBAction)book:(id)sender {
-        NSLog(@"点击了笔记本");
+    NSLog(@"点击了笔记本");
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"userinfo" sender:indexPath];
+//    [self performSegueWithIdentifier:@"userinfo" sender:indexPath];
     [self performSegueWithIdentifier:@"comment" sender:indexPath];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender {
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    int index = indexPath.row;
+    NSIndexPath *indexPath = (NSIndexPath*)sender;
     NSLog(@"the index is %d",index);
     if ([segue.identifier isEqualToString:@"userinfo"]) {
         UserInfoViewController *destViewController = segue.destinationViewController;
@@ -127,10 +155,67 @@ NSMutableArray * blogs;
 }
 
 /**
- 切换进入评论列表
+ 切换进入最新日记
  */
-- (IBAction)comment:(id)sender {
-    [self performSegueWithIdentifier:@"comment" sender:self];
+- (IBAction)freshBlogs:(id)sender {
+    NSString *url = @"https://open.timepill.net/api/diaries/today";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    NSString *username = @"furnace09@163.com";
+    NSString *password = @"xiexie123";
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"page"] = @1;
+    params[@"page_size"] = @10;
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:username password:password];
+    [manager.requestSerializer setHTTPShouldHandleCookies:TRUE];
+    [manager GET:url parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        if ([responseObject isKindOfClass: [NSDictionary class]]) {
+            NSDictionary *jsonDict = (NSDictionary *) responseObject;
+            blogs = [jsonDict objectForKey:@"diaries"];
+            [self.tableView reloadData];
+            NSLog(@"blogs: %@", blogs);
+        }
+        NSLog(@"responseObject: %@", responseObject);
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
+
+
+/**
+ 切换进入关注日记
+ */
+- (IBAction)followBlogs:(id)sender {
+    NSString *url = @"https://open.timepill.net/api/diaries/follow";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    NSString *username = @"furnace09@163.com";
+    NSString *password = @"xiexie123";
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"page"] = @1;
+    params[@"page_size"] = @10;
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:username password:password];
+    [manager.requestSerializer setHTTPShouldHandleCookies:TRUE];
+    [manager GET:url parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        if ([responseObject isKindOfClass: [NSDictionary class]]) {
+            NSDictionary *jsonDict = (NSDictionary *) responseObject;
+            blogs = [jsonDict objectForKey:@"diaries"];
+            [self.tableView reloadData];
+            NSLog(@"blogs: %@", blogs);
+        }
+        NSLog(@"responseObject: %@", responseObject);
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
+}
+
+/**
+ 切换进入话题日记
+ */
+- (IBAction)topicBlogs:(id)sender {
+    
+}
+
 
 @end

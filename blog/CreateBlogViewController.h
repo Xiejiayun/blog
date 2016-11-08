@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateBlogViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface CreateBlogViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *title;
 @property (weak, nonatomic) IBOutlet UITextView *content;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UIButton *saveBlog;
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
+@property (weak, nonatomic) IBOutlet UILabel *hiddenBlogSetId;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 
+@property NSUInteger *uid;
 @end

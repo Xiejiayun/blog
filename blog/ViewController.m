@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
+#include "FreshBlogViewController.h"
 #import <AFNetworking/AFNetworking.h>
 
 @interface ViewController ()
@@ -28,7 +30,6 @@
 }
 
 - (IBAction)login:(id)sender {
-    [self performSegueWithIdentifier:@"login" sender:self];
     NSString *username = _uname.text;
     NSString *password = _upwd.text;
     NSString *url = @"https://open.timepill.net/api/users/my";
@@ -38,7 +39,12 @@
     [manager.requestSerializer setHTTPShouldHandleCookies:TRUE];
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"Response: %@", responseObject);
-        [self performSegueWithIdentifier:@"login" sender:self];                     
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+            delegate.uinfo = (NSDictionary*)responseObject;
+                [self performSegueWithIdentifier:@"login" sender:self];
+        }
+        
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];

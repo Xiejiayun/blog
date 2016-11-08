@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BlogSet : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *time;
 
 @end

@@ -21,7 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    name.text = [blog objectForKey:@"name"];
+    name.text = [[blog objectForKey:@"user"] objectForKey:@"name"];
+    
     NSString *url = [[blog objectForKey:@"user"]objectForKey:@"iconUrl"];
     [avatar sd_setImageWithURL:[NSURL URLWithString:url]
               placeholderImage:[UIImage imageNamed:@"placeholder.png"]

@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2C16C5C1EA927CAB34ED202D /* libPods-blog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A6FC4D681AE6C38AF74D69 /* libPods-blog.a */; };
+		DE28964C1DD052EA0014D37D /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE28964B1DD052EA0014D37D /* ArticlesViewController.m */; };
+		DE2896501DD05BF20014D37D /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = DE28964F1DD05BF20014D37D /* man.png */; };
 		DE36ABB51DC497D4004C93D7 /* FollowBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE36ABB41DC497D4004C93D7 /* FollowBlogViewController.m */; };
 		DEC60D871DC583D100CAB4E0 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC60D861DC583D100CAB4E0 /* UserInfoViewController.m */; };
 		DEC60D901DC5853500CAB4E0 /* BlogSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC60D8F1DC5853500CAB4E0 /* BlogSet.m */; };
 		DEC60D931DC59CD400CAB4E0 /* CreateBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC60D921DC59CD400CAB4E0 /* CreateBlogViewController.m */; };
+		DEC7B9B91DD1CEB90094B788 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC7B9B81DD1CEB90094B788 /* CommentCell.m */; };
 		DECBD0751DC8C87900192631 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DECBD0741DC8C87900192631 /* CommentViewController.m */; };
 		DED131C01DC456F900D02D74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131BF1DC456F900D02D74 /* main.m */; };
 		DED131C31DC456F900D02D74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131C21DC456F900D02D74 /* AppDelegate.m */; };
@@ -22,11 +25,16 @@
 		DED131D71DC45DAC00D02D74 /* HomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131D61DC45DAC00D02D74 /* HomeTabBarController.m */; };
 		DED131E01DC46B2500D02D74 /* BlogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131DF1DC46B2500D02D74 /* BlogCell.m */; };
 		DED131E31DC46C8D00D02D74 /* FreshBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131E21DC46C8D00D02D74 /* FreshBlogViewController.m */; };
+		DEF8C0CB1DD023C60074E3B1 /* BlogSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C0CA1DD023C60074E3B1 /* BlogSetViewController.m */; };
+		DEF8C0CE1DD046A50074E3B1 /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C0CD1DD046A50074E3B1 /* ArticleCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		17140CE8E974F848BD69A2DF /* Pods-blog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blog/Pods-blog.debug.xcconfig"; sourceTree = "<group>"; };
 		67956DD40CF299031E7C03DF /* Pods-blog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blog.release.xcconfig"; path = "Pods/Target Support Files/Pods-blog/Pods-blog.release.xcconfig"; sourceTree = "<group>"; };
+		DE28964A1DD052EA0014D37D /* ArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesViewController.h; sourceTree = "<group>"; };
+		DE28964B1DD052EA0014D37D /* ArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesViewController.m; sourceTree = "<group>"; };
+		DE28964F1DD05BF20014D37D /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = man.png; path = "../../../Downloads/iconbeast-lite-200/iconbeast lite 200 - png/man.png"; sourceTree = SOURCE_ROOT; };
 		DE36ABB31DC497D4004C93D7 /* FollowBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowBlogViewController.h; sourceTree = "<group>"; };
 		DE36ABB41DC497D4004C93D7 /* FollowBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowBlogViewController.m; sourceTree = "<group>"; };
 		DEC60D851DC583D100CAB4E0 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
@@ -35,6 +43,8 @@
 		DEC60D8F1DC5853500CAB4E0 /* BlogSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogSet.m; sourceTree = "<group>"; };
 		DEC60D911DC59CD400CAB4E0 /* CreateBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateBlogViewController.h; sourceTree = "<group>"; };
 		DEC60D921DC59CD400CAB4E0 /* CreateBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBlogViewController.m; sourceTree = "<group>"; };
+		DEC7B9B71DD1CEB90094B788 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
+		DEC7B9B81DD1CEB90094B788 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		DECBD0731DC8C87900192631 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		DECBD0741DC8C87900192631 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		DED131BB1DC456F900D02D74 /* blog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +63,10 @@
 		DED131DF1DC46B2500D02D74 /* BlogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogCell.m; sourceTree = "<group>"; };
 		DED131E11DC46C8D00D02D74 /* FreshBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshBlogViewController.h; sourceTree = "<group>"; };
 		DED131E21DC46C8D00D02D74 /* FreshBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshBlogViewController.m; sourceTree = "<group>"; };
+		DEF8C0C91DD023C60074E3B1 /* BlogSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogSetViewController.h; sourceTree = "<group>"; };
+		DEF8C0CA1DD023C60074E3B1 /* BlogSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogSetViewController.m; sourceTree = "<group>"; };
+		DEF8C0CC1DD046A50074E3B1 /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
+		DEF8C0CD1DD046A50074E3B1 /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
 		F0A6FC4D681AE6C38AF74D69 /* libPods-blog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-blog.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -108,18 +122,26 @@
 				DED131D61DC45DAC00D02D74 /* HomeTabBarController.m */,
 				DED131E11DC46C8D00D02D74 /* FreshBlogViewController.h */,
 				DED131E21DC46C8D00D02D74 /* FreshBlogViewController.m */,
-				DE36ABB31DC497D4004C93D7 /* FollowBlogViewController.h */,
-				DE36ABB41DC497D4004C93D7 /* FollowBlogViewController.m */,
-				DEC60D8E1DC5853500CAB4E0 /* BlogSet.h */,
-				DEC60D8F1DC5853500CAB4E0 /* BlogSet.m */,
-				DEC60D851DC583D100CAB4E0 /* UserInfoViewController.h */,
-				DEC60D861DC583D100CAB4E0 /* UserInfoViewController.m */,
 				DEC60D911DC59CD400CAB4E0 /* CreateBlogViewController.h */,
 				DEC60D921DC59CD400CAB4E0 /* CreateBlogViewController.m */,
-				DECBD0731DC8C87900192631 /* CommentViewController.h */,
-				DECBD0741DC8C87900192631 /* CommentViewController.m */,
 				DED131DE1DC46B2500D02D74 /* BlogCell.h */,
 				DED131DF1DC46B2500D02D74 /* BlogCell.m */,
+				DECBD0731DC8C87900192631 /* CommentViewController.h */,
+				DECBD0741DC8C87900192631 /* CommentViewController.m */,
+				DEC7B9B71DD1CEB90094B788 /* CommentCell.h */,
+				DEC7B9B81DD1CEB90094B788 /* CommentCell.m */,
+				DE36ABB31DC497D4004C93D7 /* FollowBlogViewController.h */,
+				DE36ABB41DC497D4004C93D7 /* FollowBlogViewController.m */,
+				DEF8C0C91DD023C60074E3B1 /* BlogSetViewController.h */,
+				DEF8C0CA1DD023C60074E3B1 /* BlogSetViewController.m */,
+				DEC60D8E1DC5853500CAB4E0 /* BlogSet.h */,
+				DEC60D8F1DC5853500CAB4E0 /* BlogSet.m */,
+				DE28964A1DD052EA0014D37D /* ArticlesViewController.h */,
+				DE28964B1DD052EA0014D37D /* ArticlesViewController.m */,
+				DEF8C0CC1DD046A50074E3B1 /* ArticleCell.h */,
+				DEF8C0CD1DD046A50074E3B1 /* ArticleCell.m */,
+				DEC60D851DC583D100CAB4E0 /* UserInfoViewController.h */,
+				DEC60D861DC583D100CAB4E0 /* UserInfoViewController.m */,
 			);
 			path = blog;
 			sourceTree = "<group>";
@@ -127,6 +149,7 @@
 		DED131BE1DC456F900D02D74 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DE28964F1DD05BF20014D37D /* man.png */,
 				DED131C11DC456F900D02D74 /* AppDelegate.h */,
 				DED131C21DC456F900D02D74 /* AppDelegate.m */,
 				DED131BF1DC456F900D02D74 /* main.m */,
@@ -204,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE2896501DD05BF20014D37D /* man.png in Resources */,
 				DED131CE1DC456F900D02D74 /* LaunchScreen.storyboard in Resources */,
 				DED131CB1DC456F900D02D74 /* Assets.xcassets in Resources */,
 				DED131C91DC456F900D02D74 /* Main.storyboard in Resources */,
@@ -268,13 +292,17 @@
 				DEC60D901DC5853500CAB4E0 /* BlogSet.m in Sources */,
 				DED131E01DC46B2500D02D74 /* BlogCell.m in Sources */,
 				DEC60D931DC59CD400CAB4E0 /* CreateBlogViewController.m in Sources */,
+				DE28964C1DD052EA0014D37D /* ArticlesViewController.m in Sources */,
 				DED131E31DC46C8D00D02D74 /* FreshBlogViewController.m in Sources */,
 				DE36ABB51DC497D4004C93D7 /* FollowBlogViewController.m in Sources */,
 				DED131C61DC456F900D02D74 /* ViewController.m in Sources */,
+				DEF8C0CE1DD046A50074E3B1 /* ArticleCell.m in Sources */,
 				DED131C31DC456F900D02D74 /* AppDelegate.m in Sources */,
 				DEC60D871DC583D100CAB4E0 /* UserInfoViewController.m in Sources */,
 				DECBD0751DC8C87900192631 /* CommentViewController.m in Sources */,
+				DEF8C0CB1DD023C60074E3B1 /* BlogSetViewController.m in Sources */,
 				DED131D71DC45DAC00D02D74 /* HomeTabBarController.m in Sources */,
+				DEC7B9B91DD1CEB90094B788 /* CommentCell.m in Sources */,
 				DED131C01DC456F900D02D74 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
