@@ -40,7 +40,7 @@
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"Response: %@", responseObject);
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+            AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
             delegate.uinfo = (NSDictionary*)responseObject;
                 [self performSegueWithIdentifier:@"login" sender:self];
         }

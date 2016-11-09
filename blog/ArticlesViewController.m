@@ -21,7 +21,13 @@ NSArray *articles;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *bookid = [_blogSetId stringValue];
+    NSString *bookid;
+    if ([_blogSetId isKindOfClass:[NSString class]]) {
+        bookid = (NSString *)_blogSetId;
+    } else {
+       bookid = [_blogSetId stringValue];
+    }
+    
     NSString *url = @"https://open.timepill.net/api/notebooks/";
     url = [[url stringByAppendingString:bookid] stringByAppendingString:@"/diaries"];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -49,9 +55,6 @@ NSArray *articles;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return UITableViewAutomaticDimension;}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *photoUrl = [articles[indexPath.row] objectForKey:@"photoUrl"];
@@ -81,12 +84,6 @@ NSArray *articles;
         [cell.image sd_setImageWithURL:[NSURL URLWithString:url]
                       placeholderImage:[UIImage imageNamed:@"placeholder.png"]
                              completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//                                 [self.heightCache setObject:[NSNumber numberWithFloat:image.size.height]
-//                                                       forKey:url];
-//                                 [tableView beginUpdates];
-//                                 [tableView reloadRowsAtIndexPaths:@[indexPath]
-//                                                  withRowAnimation:UITableViewRowAnimationFade];
-//                                 [tableView endUpdates];
                              }];
     }
     return cell;

@@ -79,7 +79,7 @@ NSMutableArray * blogs;
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-
+    
     [refreshControl endRefreshing];
 }
 
@@ -137,13 +137,12 @@ NSMutableArray * blogs;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [self performSegueWithIdentifier:@"userinfo" sender:indexPath];
+    //    [self performSegueWithIdentifier:@"userinfo" sender:indexPath];
     [self performSegueWithIdentifier:@"comment" sender:indexPath];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender {
     NSIndexPath *indexPath = (NSIndexPath*)sender;
-    NSLog(@"the index is %d",index);
     if ([segue.identifier isEqualToString:@"userinfo"]) {
         UserInfoViewController *destViewController = segue.destinationViewController;
         destViewController.blog = [blogs objectAtIndex:indexPath.row];
@@ -207,7 +206,7 @@ NSMutableArray * blogs;
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-
+    
 }
 
 /**

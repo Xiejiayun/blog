@@ -25,6 +25,7 @@
 		DED131D71DC45DAC00D02D74 /* HomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131D61DC45DAC00D02D74 /* HomeTabBarController.m */; };
 		DED131E01DC46B2500D02D74 /* BlogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131DF1DC46B2500D02D74 /* BlogCell.m */; };
 		DED131E31DC46C8D00D02D74 /* FreshBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131E21DC46C8D00D02D74 /* FreshBlogViewController.m */; };
+		DEF38BD01DD2D3BA0094CBD7 /* CreateBlogSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF38BCF1DD2D3BA0094CBD7 /* CreateBlogSetViewController.m */; };
 		DEF8C0CB1DD023C60074E3B1 /* BlogSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C0CA1DD023C60074E3B1 /* BlogSetViewController.m */; };
 		DEF8C0CE1DD046A50074E3B1 /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C0CD1DD046A50074E3B1 /* ArticleCell.m */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,8 @@
 		DED131DF1DC46B2500D02D74 /* BlogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogCell.m; sourceTree = "<group>"; };
 		DED131E11DC46C8D00D02D74 /* FreshBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshBlogViewController.h; sourceTree = "<group>"; };
 		DED131E21DC46C8D00D02D74 /* FreshBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshBlogViewController.m; sourceTree = "<group>"; };
+		DEF38BCE1DD2D3BA0094CBD7 /* CreateBlogSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateBlogSetViewController.h; sourceTree = "<group>"; };
+		DEF38BCF1DD2D3BA0094CBD7 /* CreateBlogSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBlogSetViewController.m; sourceTree = "<group>"; };
 		DEF8C0C91DD023C60074E3B1 /* BlogSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogSetViewController.h; sourceTree = "<group>"; };
 		DEF8C0CA1DD023C60074E3B1 /* BlogSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogSetViewController.m; sourceTree = "<group>"; };
 		DEF8C0CC1DD046A50074E3B1 /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				DEF8C0CA1DD023C60074E3B1 /* BlogSetViewController.m */,
 				DEC60D8E1DC5853500CAB4E0 /* BlogSet.h */,
 				DEC60D8F1DC5853500CAB4E0 /* BlogSet.m */,
+				DEF38BCE1DD2D3BA0094CBD7 /* CreateBlogSetViewController.h */,
+				DEF38BCF1DD2D3BA0094CBD7 /* CreateBlogSetViewController.m */,
 				DE28964A1DD052EA0014D37D /* ArticlesViewController.h */,
 				DE28964B1DD052EA0014D37D /* ArticlesViewController.m */,
 				DEF8C0CC1DD046A50074E3B1 /* ArticleCell.h */,
@@ -300,6 +305,7 @@
 				DED131C31DC456F900D02D74 /* AppDelegate.m in Sources */,
 				DEC60D871DC583D100CAB4E0 /* UserInfoViewController.m in Sources */,
 				DECBD0751DC8C87900192631 /* CommentViewController.m in Sources */,
+				DEF38BD01DD2D3BA0094CBD7 /* CreateBlogSetViewController.m in Sources */,
 				DEF8C0CB1DD023C60074E3B1 /* BlogSetViewController.m in Sources */,
 				DED131D71DC45DAC00D02D74 /* HomeTabBarController.m in Sources */,
 				DEC7B9B91DD1CEB90094B788 /* CommentCell.m in Sources */,

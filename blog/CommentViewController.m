@@ -77,8 +77,8 @@
 
 //添加评论
 - (IBAction)comment:(id)sender {
-    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    NSMutableDictionary *uinfo = delegate.uinfo;
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSMutableDictionary *uinfo = (NSMutableDictionary *)delegate.uinfo;
     NSString *comment = commentContent.text;
     NSString *blogid = [[blog objectForKey:@"id"] stringValue];
     NSString *url = @"https://open.timepill.net/api/diaries/";
@@ -128,7 +128,7 @@
         [cell.avatar sd_setImageWithURL:[NSURL URLWithString:url]
                        placeholderImage:[UIImage imageNamed:@"placeholder.png"]
                               completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                }];
+                              }];
     }
     return cell;
 }
@@ -138,8 +138,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    NSMutableDictionary *uinfo = delegate.uinfo;
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSMutableDictionary *uinfo = (NSMutableDictionary *)delegate.uinfo;
     NSDictionary *commentInfo = [_comments objectAtIndex:indexPath.row];
     if ([uinfo objectForKey:@"id"] == [[commentInfo objectForKey:@"user"]objectForKey:@"id"]) {
         NSString *commentid = [[commentInfo objectForKey:@"id"] stringValue];

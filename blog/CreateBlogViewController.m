@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "CreateBlogViewController.h"
 #import "FreshBlogViewController.h"
+#import "ArticlesViewController.h"
 #import <AFNetworking/AFNetworking.h>
 
 
@@ -23,9 +24,9 @@ NSDictionary *uinfo;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     uinfo = delegate.uinfo;
-    NSInteger *uid = (NSInteger)[uinfo objectForKey:@"id"];
+    NSInteger uid = (NSInteger)[uinfo objectForKey:@"id"];
     [self initBlogSets:uid];
     // Do any additional setup after loading the view.
     
@@ -62,7 +63,7 @@ numberOfRowsInComponent:(NSInteger)component
     _hiddenBlogSetId.text = [blogSetId stringValue];
 }
 
--(void) initBlogSets:(NSInteger*)uid{
+-(void) initBlogSets:(NSInteger)uid{
     NSString *url = @"https://open.timepill.net/api/notebooks/my";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
@@ -87,14 +88,25 @@ numberOfRowsInComponent:(NSInteger)component
     [self createBlog];
 }
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSNumber *blogSetId = (NSNumber*)sender;
+    if ([[segue identifier] isEqualToString:@"backArticles"]) {
+        if ([segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+            UINavigationController *navController = (UINavigationController*)[segue destinationViewController];
+            ArticlesViewController *articleController =(ArticlesViewController *)[navController topViewController];
+            articleController.blogSetId = blogSetId;
+        }
+    }
+}
+
 -(void) createBlog {
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain", @"multipart/form-data", @"application/json", @"text/html", @"image/jpeg", @"image/png", @"application/octet-stream", @"text/json", nil];
     NSString *content = _content.text;
-    NSString *bookid = _hiddenBlogSetId.text;
-    NSString *url = [[@"https://open.timepill.net/api/notebooks/" stringByAppendingString:bookid] stringByAppendingString:@"/diaries"];
+    NSString *blogSetId = _hiddenBlogSetId.text;
+    NSString *url = [[@"https://open.timepill.net/api/notebooks/" stringByAppendingString:blogSetId] stringByAppendingString:@"/diaries"];
     NSData *fileData = _image.image?UIImageJPEGRepresentation(_image.image, 0.5):nil;
     NSString *username = @"furnace09@163.com";
     NSString *password = @"xiexie123";
@@ -108,7 +120,7 @@ numberOfRowsInComponent:(NSInteger)component
                                     name:@"content"];
         [self.pickerView reloadAllComponents];
     } progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        [self performSegueWithIdentifier:@"back" sender:self];
+        [self performSegueWithIdentifier:@"backArticles" sender:blogSetId];
         NSLog(@"Response: %@", responseObject);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Error: %@", error);

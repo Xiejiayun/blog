@@ -12,5 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property(nonatomic, retain) NSMutableArray * blogSet;
+//, setter=setBlogSets:
 
 @end
