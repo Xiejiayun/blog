@@ -26,6 +26,8 @@
 		DED131E01DC46B2500D02D74 /* BlogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131DF1DC46B2500D02D74 /* BlogCell.m */; };
 		DED131E31DC46C8D00D02D74 /* FreshBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED131E21DC46C8D00D02D74 /* FreshBlogViewController.m */; };
 		DEF38BD01DD2D3BA0094CBD7 /* CreateBlogSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF38BCF1DD2D3BA0094CBD7 /* CreateBlogSetViewController.m */; };
+		DEF38BD31DD315DE0094CBD7 /* FollowCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF38BD21DD315DE0094CBD7 /* FollowCollectionCell.m */; };
+		DEF38BD61DD3172A0094CBD7 /* SelfInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF38BD51DD3172A0094CBD7 /* SelfInfoViewController.m */; };
 		DEF8C0CB1DD023C60074E3B1 /* BlogSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C0CA1DD023C60074E3B1 /* BlogSetViewController.m */; };
 		DEF8C0CE1DD046A50074E3B1 /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C0CD1DD046A50074E3B1 /* ArticleCell.m */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,10 @@
 		DED131E21DC46C8D00D02D74 /* FreshBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshBlogViewController.m; sourceTree = "<group>"; };
 		DEF38BCE1DD2D3BA0094CBD7 /* CreateBlogSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateBlogSetViewController.h; sourceTree = "<group>"; };
 		DEF38BCF1DD2D3BA0094CBD7 /* CreateBlogSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBlogSetViewController.m; sourceTree = "<group>"; };
+		DEF38BD11DD315DE0094CBD7 /* FollowCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowCollectionCell.h; sourceTree = "<group>"; };
+		DEF38BD21DD315DE0094CBD7 /* FollowCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowCollectionCell.m; sourceTree = "<group>"; };
+		DEF38BD41DD3172A0094CBD7 /* SelfInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfInfoViewController.h; sourceTree = "<group>"; };
+		DEF38BD51DD3172A0094CBD7 /* SelfInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfInfoViewController.m; sourceTree = "<group>"; };
 		DEF8C0C91DD023C60074E3B1 /* BlogSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogSetViewController.h; sourceTree = "<group>"; };
 		DEF8C0CA1DD023C60074E3B1 /* BlogSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogSetViewController.m; sourceTree = "<group>"; };
 		DEF8C0CC1DD046A50074E3B1 /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
@@ -147,6 +153,10 @@
 				DEF8C0CD1DD046A50074E3B1 /* ArticleCell.m */,
 				DEC60D851DC583D100CAB4E0 /* UserInfoViewController.h */,
 				DEC60D861DC583D100CAB4E0 /* UserInfoViewController.m */,
+				DEF38BD41DD3172A0094CBD7 /* SelfInfoViewController.h */,
+				DEF38BD51DD3172A0094CBD7 /* SelfInfoViewController.m */,
+				DEF38BD11DD315DE0094CBD7 /* FollowCollectionCell.h */,
+				DEF38BD21DD315DE0094CBD7 /* FollowCollectionCell.m */,
 			);
 			path = blog;
 			sourceTree = "<group>";
@@ -294,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF38BD61DD3172A0094CBD7 /* SelfInfoViewController.m in Sources */,
 				DEC60D901DC5853500CAB4E0 /* BlogSet.m in Sources */,
 				DED131E01DC46B2500D02D74 /* BlogCell.m in Sources */,
 				DEC60D931DC59CD400CAB4E0 /* CreateBlogViewController.m in Sources */,
@@ -303,6 +314,7 @@
 				DED131C61DC456F900D02D74 /* ViewController.m in Sources */,
 				DEF8C0CE1DD046A50074E3B1 /* ArticleCell.m in Sources */,
 				DED131C31DC456F900D02D74 /* AppDelegate.m in Sources */,
+				DEF38BD31DD315DE0094CBD7 /* FollowCollectionCell.m in Sources */,
 				DEC60D871DC583D100CAB4E0 /* UserInfoViewController.m in Sources */,
 				DECBD0751DC8C87900192631 /* CommentViewController.m in Sources */,
 				DEF38BD01DD2D3BA0094CBD7 /* CreateBlogSetViewController.m in Sources */,

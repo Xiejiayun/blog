@@ -84,6 +84,59 @@ NSMutableArray * blogs;
 }
 
 
+- (IBAction)swipeLeft:(id)sender {
+    page++;
+    NSString *url = @"https://open.timepill.net/api/diaries/today";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    NSString *username = @"furnace09@163.com";
+    NSString *password = @"xiexie123";
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"page"] = [NSNumber numberWithInt:page];
+    params[@"page_size"] = @10;
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:username password:password];
+    [manager.requestSerializer setHTTPShouldHandleCookies:TRUE];
+    [manager GET:url parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        if ([responseObject isKindOfClass: [NSDictionary class]]) {
+            NSDictionary *jsonDict = (NSDictionary *) responseObject;
+            blogs = [jsonDict objectForKey:@"diaries"];
+            [self.tableView reloadData];
+            NSLog(@"blogs: %@", blogs);
+        }
+        NSLog(@"responseObject: %@", responseObject);
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
+}
+
+- (IBAction)swipePage:(UISwipeGestureRecognizer *)sender {
+    page--;
+    if (page <= 0)
+        page = 1;
+    NSString *url = @"https://open.timepill.net/api/diaries/today";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    NSString *username = @"furnace09@163.com";
+    NSString *password = @"xiexie123";
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"page"] = [NSNumber numberWithInt:page];
+    params[@"page_size"] = @10;
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:username password:password];
+    [manager.requestSerializer setHTTPShouldHandleCookies:TRUE];
+    [manager GET:url parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        if ([responseObject isKindOfClass: [NSDictionary class]]) {
+            NSDictionary *jsonDict = (NSDictionary *) responseObject;
+            blogs = [jsonDict objectForKey:@"diaries"];
+            [self.tableView reloadData];
+            NSLog(@"blogs: %@", blogs);
+        }
+        NSLog(@"responseObject: %@", responseObject);
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [blogs count];
 }

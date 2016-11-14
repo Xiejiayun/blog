@@ -24,7 +24,8 @@
 @synthesize commentBtn;
 @synthesize pic;
 @synthesize avatar;
-
+@synthesize follow;
+@synthesize userid;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,6 +33,7 @@
     content.text = [blog objectForKey:@"content"];
     NSString *blogurl = [blog objectForKey:@"photoUrl"];
     NSString *avatarUrl = [[blog objectForKey:@"user" ]objectForKey:@"iconUrl"];
+    
     if (avatarUrl && (NSNull *)avatarUrl != [NSNull null]) {
         [avatar sd_setImageWithURL:[NSURL URLWithString:avatarUrl]
                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]
@@ -62,10 +64,31 @@
             [self.commentView reloadData];
             NSLog(@"comments: %@", _comments);
         }
-        NSLog(@"responseObject: %@", responseObject);
+        
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+    
+    url = @"https://open.timepill.net/api/relation/";
+    NSNumber *user = (NSNumber *)[[blog objectForKey:@"user"] objectForKey:@"id"];
+    userid = [user stringValue];
+    url = [url stringByAppendingString:userid];
+    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject){
+        NSInteger result = (NSInteger)responseObject;
+        if (result == 0) {
+            follow.titleLabel.text = @"关注用户";
+        } else {
+            follow.titleLabel.text = @"取消关注";
+        }
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
+    
+    [avatar setUserInteractionEnabled:TRUE];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapUser:)];
+    [tap setNumberOfTapsRequired:1];
+    [avatar addGestureRecognizer:tap];
     
     
 }
@@ -133,6 +156,10 @@
     return cell;
 }
 
+- (IBAction)tapUser:(UITapGestureRecognizer *)sender {
+    [self performSegueWithIdentifier:@"userhome" sender:self];
+}
+
 -(BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
@@ -159,12 +186,41 @@
             NSLog(@"Error: %@", error);
         }];
     }
+
 }
 
 - (void)setComments:(NSMutableArray *)comments {
     
     NSMutableArray * tmp = [comments mutableCopy];
     _comments = tmp;
+}
+
+//关注用户或者取消关注
+- (IBAction)follow:(id)sender {
+    NSString *text = follow.titleLabel.text;
+    NSString *url = @"https://open.timepill.net/api/relation/";
+    NSNumber *user = (NSNumber *)[[blog objectForKey:@"user"] objectForKey:@"id"];
+    userid = [user stringValue];
+    url = [url stringByAppendingString:userid];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    NSString *username = @"furnace09@163.com";
+    NSString *password = @"xiexie123";
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:username password:password];
+    if ([text isEqualToString: @"关注用户"]) {
+        [manager POST:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject){
+            follow.titleLabel.text = @"取消关注";
+        } failure:^(NSURLSessionTask *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+    } else if([text isEqualToString: @"取消关注"]){
+        [manager DELETE:url parameters:nil success:^(NSURLSessionTask *task, id responseObject){
+            follow.titleLabel.text = @"关注用户";
+        } failure:^(NSURLSessionTask *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+    }
+
 }
 
 

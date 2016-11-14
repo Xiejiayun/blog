@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface SelfInfoViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UITextView *desc;
+@property (weak, nonatomic) IBOutlet UIImageView *avatar;
+@property (weak, nonatomic) IBOutlet UICollectionView *followCollectionView;
+@property (weak, nonatomic) IBOutlet UIButton *saveBtn;
 
 @end
